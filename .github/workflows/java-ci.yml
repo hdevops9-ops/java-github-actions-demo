@@ -44,7 +44,7 @@ jobs:
           docker build -t java-github-actions-demo:${{ github.sha }} .
 
       - name: Trivy Vulnerability Scan
-        uses: aquasecurity/trivy-action@0.28.0
+        uses: aquasecurity/trivy-action@0.35.0
         with:
           image-ref: java-github-actions-demo:${{ github.sha }}
           format: table
