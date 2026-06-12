@@ -39,6 +39,9 @@ jobs:
             -Dsonar.host.url=https://sonarcloud.io \
             -Dsonar.token=$SONAR_TOKEN
 
+      - name: Build Docker Image
+        run: docker build -t java-github-actions-demo:${{ github.sha }} .
+
       - name: Upload JAR Artifact
         uses: actions/upload-artifact@v4
         with:
